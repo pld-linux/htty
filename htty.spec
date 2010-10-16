@@ -1,10 +1,7 @@
-# TODO
-# - any policy what to package in %{ruby_ridir}?
-#
 Summary:	htty is a console application for interacting with HTTP servers
 Name:		htty
 Version:	1.1.0
-Release:	0.1
+Release:	1
 License:	MIT
 Source0:	http://rubygems.org/downloads/%{name}-%{version}.gem
 # Source0-md5:	4583c7b17bb630de676fe0c5c595ab1e
@@ -88,4 +85,3 @@ rm -rf $RPM_BUILD_ROOT
 %files ri
 %defattr(644,root,root,755)
 %{ruby_ridir}/HTTY
-%{ruby_ridir}/cache.ri
