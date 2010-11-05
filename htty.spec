@@ -1,10 +1,10 @@
 Summary:	htty is a console application for interacting with HTTP servers
 Name:		htty
-Version:	1.1.4
+Version:	1.1.5
 Release:	1
 License:	MIT
 Source0:	http://rubygems.org/downloads/%{name}-%{version}.gem
-# Source0-md5:	10168b89e51a4a06a822124b405f73c4
+# Source0-md5:	e45ba6208ddb76302f9d7c00ff6e2c53
 Patch0:		%{name}-paths.patch
 Group:		Applications/Console
 URL:		http://htty.github.com/
@@ -56,7 +56,8 @@ find -newer README.markdown -o -print | xargs touch --reference %{SOURCE0}
 %build
 rdoc --ri --op ri lib
 rdoc --op rdoc lib
-rm ri/created.rid
+
+rm -f ri/created.rid
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -67,6 +68,8 @@ cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 cp -a rdoc $RPM_BUILD_ROOT%{ruby_rdocdir}/%{name}-%{version}
 cp -a VERSION $RPM_BUILD_ROOT%{ruby_rubylibdir}/%{name}
+
+rm -f $RPM_BUILD_ROOT%{ruby_ridir}/cache.ri
 
 %clean
 rm -rf $RPM_BUILD_ROOT
