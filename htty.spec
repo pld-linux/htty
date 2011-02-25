@@ -1,16 +1,18 @@
 Summary:	htty is a console application for interacting with HTTP servers
 Name:		htty
-Version:	1.2.1
+Version:	1.3.1
 Release:	1
 License:	MIT
 Source0:	http://rubygems.org/downloads/%{name}-%{version}.gem
-# Source0-md5:	70a4cc0c584b2e73a21c8ddaf7a2c4a8
+# Source0-md5:	18e75b1f07438f0da56bdfea1892485e
 Patch0:		%{name}-paths.patch
 Group:		Applications/Console
 URL:		http://htty.github.com/
 BuildRequires:	rpmbuild(macros) >= 1.484
 BuildRequires:	ruby >= 1:1.8.7
 BuildRequires:	ruby-modules
+Requires:	ruby-mime-types
+Requires:	ruby-rubygems
 %{?ruby_mod_ver_requires_eq}
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -67,7 +69,6 @@ install bin/htty $RPM_BUILD_ROOT%{_bindir}
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_rubylibdir}
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 cp -a rdoc $RPM_BUILD_ROOT%{ruby_rdocdir}/%{name}-%{version}
-cp -a VERSION $RPM_BUILD_ROOT%{ruby_rubylibdir}/%{name}
 
 rm -f $RPM_BUILD_ROOT%{ruby_ridir}/cache.ri
 

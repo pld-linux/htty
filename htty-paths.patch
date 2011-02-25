@@ -8,14 +8,3 @@
 +require 'htty'
  
  HTTY::CLI.new(ARGV).run!
---- lib/htty.rb~	2010-09-29 03:44:35.000000000 +0300
-+++ lib/htty.rb	2010-10-16 15:58:38.765349593 +0300
-@@ -2,7 +2,7 @@
- module HTTY
- 
-   # The version of this release of _htty_.
--  VERSION = File.read("#{File.dirname __FILE__}/../VERSION").chomp
-+  VERSION = File.read("#{File.dirname __FILE__}/htty/VERSION").chomp
- 
- end
- 
