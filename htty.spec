@@ -1,10 +1,10 @@
 Summary:	htty is a console application for interacting with HTTP servers
 Name:		htty
-Version:	1.3.1
+Version:	1.3.3
 Release:	1
 License:	MIT
 Source0:	http://rubygems.org/downloads/%{name}-%{version}.gem
-# Source0-md5:	18e75b1f07438f0da56bdfea1892485e
+# Source0-md5:	c1bd51461499b62edfd586b9e4ad2255
 Patch0:		%{name}-paths.patch
 Group:		Applications/Console
 URL:		http://htty.github.com/
